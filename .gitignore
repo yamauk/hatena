@@ -110,3 +110,4 @@ target/
 
 #rdb
 *.rdb
+dumps/
