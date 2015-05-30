@@ -4,9 +4,9 @@ import urllib2
 import time
 
 
-date = datetime.datetime(2015, 03, 01)
+date = datetime.datetime(2014, 01, 01)
 
-while date != datetime.datetime(2015, 5, 1):
+while date != datetime.datetime(2015, 05, 01):
     time.sleep(1)
     date_str = date.strftime('%Y%m%d')
     print date_str
@@ -17,6 +17,6 @@ while date != datetime.datetime(2015, 5, 1):
     w = open('hotentry.txt', 'a')
     div_box_main = soup.find("div", attrs={"class": "box_main"})
     for link in div_box_main.find_all("a", attrs={"class": "entry-link"}):
-        w.write(link.get('href') + '\n')
+        w.write(date_str+" "+link.get('href') + '\n')
 
     date += datetime.timedelta(days=1)
