@@ -12,7 +12,7 @@ if __name__ == '__main__':
         for k, v in nodes.items():
             G.add_edge(k, key, weight=v)
 
-    pagerank = nx.pagerank_scipy(G, alpha=0.9)
+    pagerank = nx.pagerank_scipy(G, alpha=0.85)
     for k, v in sorted(pagerank.items(), key=lambda x: x[1], reverse=True):
         print  k, v
 
