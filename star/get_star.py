@@ -37,9 +37,11 @@ def get_star(url):
             continue
         star_json = json.loads(star.read())
         entry_star_info = star_json['entries']
+
         for star_info in entry_star_info:
+            stars=[]
             if 'stars' in star_info:
-                stars = star_info['stars']
+                stars += star_info['stars']
             if 'colored_stars' in star_info:
                 stars += star_info['colored_stars']
             star_user_list = defaultdict(int)
@@ -92,11 +94,12 @@ def create_bookmark_url(user, timestamp, eid):
 
 if __name__ == '__main__':
     red = redis.Redis(host='127.0.0.1', port=6379, db=0)
-    r = open('hotentry_linksbk.txt', 'r')
+    r = open('hotentry.txt', 'r')
 
     for i, url in enumerate(r):
         print '---'
         print i, url,
+        url=url.split()[1]
         dic = get_star(url)
         for k, v in dic.items():
             if len(v) != 0:
