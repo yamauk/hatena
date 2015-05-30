@@ -111,3 +111,7 @@ target/
 #rdb
 *.rdb
 dumps/
+
+*.txt
+star/*.txt
+star_network/*.txt
