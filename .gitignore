@@ -114,4 +114,4 @@ dumps/
 
 *.txt
 star/*.txt
-star_network/*.txt
+star_network/result/test/
