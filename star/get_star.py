@@ -43,7 +43,7 @@ def get_star(url):
             if 'stars' in star_info:
                 stars += star_info['stars']
             if 'colored_stars' in star_info:
-                stars += star_info['colored_stars']
+                stars += star_info['colored_stars']['stars']
             star_user_list = defaultdict(int)
             for star in stars:
                 if 'name' in star:
